@@ -18,9 +18,10 @@ ENV CATALINA_HOME /opt/apache-tomcat-8.0.22
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# expose ports
+EXPOSE 8080
+
+# script to start the container
 ADD tomcat_run.sh /tomcat_run.sh
 RUN chmod 755 /*.sh
-
-EXPOSE 8080
 CMD ["/tomcat_run.sh"]
-
