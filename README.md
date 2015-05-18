@@ -1,5 +1,5 @@
-[![logo](http://tomcat.apache.org/images/tomcat.png)]
-(http://tomcat.apache.org)
+[![logo](https://raw.githubusercontent.com/pascalgrimaud/docker-tomcat/master/tomcat.png)]
+(https://tomcat.apache.org/)
 
 [![Circle CI](https://circleci.com/gh/pascalgrimaud/docker-tomcat.svg?style=svg)]
 (https://circleci.com/gh/pascalgrimaud/docker-tomcat)
@@ -29,7 +29,7 @@ docker build -t pascalgrimaud/tomcat:8.0.22 .
 You can build directly from the [GitHub project](https://github.com/pascalgrimaud/docker-tomcat/) :
 
 ```
-docker build -t pascalgrimaud/ubuntu github.com/pascalgrimaud/docker-tomcat.git
+docker build -t pascalgrimaud/tomcat:8.0.22 github.com/pascalgrimaud/docker-tomcat.git
 ```
 
 
