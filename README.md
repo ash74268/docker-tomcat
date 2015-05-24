@@ -54,6 +54,13 @@ docker run -d -p 8080:8080 -e TOMCAT_PASS="pass" pascalgrimaud/tomcat:8.0.22
 ```
 
 
+If you forget the admin password, delete the file .password and restart the container :
+
+```
+docker exec -it <container id> rm /.password
+```
+
+
 # Deploy a war
 
 To deploy a specific file.war, you need to make another container.

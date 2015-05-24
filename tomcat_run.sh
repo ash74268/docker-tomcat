@@ -3,7 +3,7 @@
 echo "Starting container : Apache Tomcat 8.0.22"
 
 # change the password
-if [ ! -f /.tomcat_set_password ]; then
+if [ ! -f /.password ]; then
 	echo "Initializing the admin user password..."
 
 	# generate password
@@ -18,7 +18,7 @@ if [ ! -f /.tomcat_set_password ]; then
 	echo '<user username="tomcat" password="'${PASS}'" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-script,admin-gui"/>' >> ${CATALINA_HOME}/conf/tomcat-users.xml
 	echo '</tomcat-users>' >> ${CATALINA_HOME}/conf/tomcat-users.xml
 
-	touch /.tomcat_set_password
+	touch /.password
 	echo "Initializing the admin user password : done!"
 fi
 
