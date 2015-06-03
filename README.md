@@ -23,13 +23,13 @@ You can clone this project and build with docker command :
 ```
 git clone https://github.com/pascalgrimaud/docker-tomcat.git
 cd docker-tomcat
-docker build -t pascalgrimaud/tomcat:8.0.22 .
+docker build -t pascalgrimaud/tomcat:8.0.23 .
 ```
 
 You can build directly from the [GitHub project](https://github.com/pascalgrimaud/docker-tomcat/) :
 
 ```
-docker build -t pascalgrimaud/tomcat:8.0.22 github.com/pascalgrimaud/docker-tomcat.git
+docker build -t pascalgrimaud/tomcat:8.0.23 github.com/pascalgrimaud/docker-tomcat.git
 ```
 
 
@@ -38,7 +38,7 @@ docker build -t pascalgrimaud/tomcat:8.0.22 github.com/pascalgrimaud/docker-tomc
 Quick start with binding to port 8080 and random password :
 
 ```
-docker run -d -p 8080:8080 pascalgrimaud/tomcat:8.0.22
+docker run -d -p 8080:8080 pascalgrimaud/tomcat:8.0.23
 ```
 
 To get the password :
@@ -50,7 +50,7 @@ docker logs <id>
 Start and set a specific password for Tomcat admin user :
 
 ```
-docker run -d -p 8080:8080 -e TOMCAT_PASS="pass" pascalgrimaud/tomcat:8.0.22
+docker run -d -p 8080:8080 -e TOMCAT_PASS="pass" pascalgrimaud/tomcat:8.0.23
 ```
 
 
@@ -68,6 +68,6 @@ Create a new directory and put your file.war.
 Then, create a new Dockerfile :
 
 ```
-FROM pascalgrimaud/tomcat:8.0.22
-ADD file.war /opt/apache-tomcat-8.0.22/webapps/file.war
+FROM pascalgrimaud/tomcat:8.0.23
+ADD file.war /opt/apache-tomcat-8.0.23/webapps/file.war
 ```

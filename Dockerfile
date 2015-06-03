@@ -9,11 +9,11 @@ RUN apt-get install -y openjdk-7-jre
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
 # install tomcat
-RUN wget -O /tmp/apache-tomcat-8.0.22.tar.gz \
-    http://apache.mirrors.ovh.net/ftp.apache.org/dist/tomcat/tomcat-8/v8.0.22/bin/apache-tomcat-8.0.22.tar.gz
-RUN echo "c7c289bafa526c3f91c5c4648e42afff /tmp/apache-tomcat-8.0.22.tar.gz" | md5sum -c
-RUN tar zxvf /tmp/apache-tomcat-8.0.22.tar.gz -C /opt/
-ENV CATALINA_HOME /opt/apache-tomcat-8.0.22
+RUN wget -O /tmp/apache-tomcat-8.0.23.tar.gz \
+    http://apache.mirrors.ovh.net/ftp.apache.org/dist/tomcat/tomcat-8/v8.0.23/bin/apache-tomcat-8.0.23.tar.gz
+RUN echo "f4381824abf458650f72ec12d8e81fde /tmp/apache-tomcat-8.0.23.tar.gz" | md5sum -c
+RUN tar zxvf /tmp/apache-tomcat-8.0.23.tar.gz -C /opt/
+ENV CATALINA_HOME /opt/apache-tomcat-8.0.23
 
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

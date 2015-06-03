@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting container : Apache Tomcat 8.0.22"
+echo "Starting container : Apache Tomcat 8.0.23"
 
 # change the password
 if [ ! -f /.password ]; then
@@ -19,7 +19,7 @@ if [ ! -f /.password ]; then
 	echo '</tomcat-users>' >> ${CATALINA_HOME}/conf/tomcat-users.xml
 
 	touch /.password
-	echo "Initializing the admin user password : done!"
+	echo "Initializing the admin user password : ok"
 fi
 
 # display info
@@ -38,5 +38,5 @@ echo "######################################################################"
 echo ""
 
 # start Apache Tomcat
-exec /opt/apache-tomcat-8.0.22/bin/catalina.sh run
+exec /opt/apache-tomcat-8.0.23/bin/catalina.sh run
 
