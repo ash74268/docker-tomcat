@@ -1,0 +1,12 @@
+Usage
+- Quick start with binding to port 8080 and random password :
+  docker run -d -p 8080:8080 pascalgrimaud/tomcat:8.0.23
+
+- To get the password :
+  docker logs <container id>
+
+- Start and set a specific password for Tomcat admin user :
+  docker run -d -p 8080:8080 -e TOMCAT_PASS="pass" pascalgrimaud/tomcat:8.0.23
+
+- If you forget the admin password, delete the file .password and restart the container :
+  docker exec -it <container id> rm /.password

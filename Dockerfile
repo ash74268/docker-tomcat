@@ -4,6 +4,9 @@ MAINTAINER Pascal Grimaud <pascalgrimaud@gmail.com>
 # update
 RUN apt-get -y update
 
+# install utilities
+RUN apt-get -y install wget
+
 # install java7
 RUN apt-get install -y openjdk-7-jre
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
@@ -20,6 +23,10 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # expose ports
 EXPOSE 8080
+
+# add help
+ADD help help.txt /
+RUN chmod 755 /help
 
 # script to start the container
 ADD tomcat_run.sh /tomcat_run.sh

@@ -1,8 +1,17 @@
 [![logo](https://raw.githubusercontent.com/pascalgrimaud/docker-tomcat/master/tomcat.png)]
 (https://tomcat.apache.org/)
 
-[![Circle CI](https://circleci.com/gh/pascalgrimaud/docker-tomcat.svg?style=svg)]
+[![Circle CI](https://circleci.com/gh/pascalgrimaud/docker-tomcat.svg?style=shield)]
 (https://circleci.com/gh/pascalgrimaud/docker-tomcat)
+
+
+# Help
+
+To display usage :
+
+```
+docker run pascalgrimaud/tomcat:8.0.23 /help
+```
 
 
 # Information
@@ -44,7 +53,7 @@ docker run -d -p 8080:8080 pascalgrimaud/tomcat:8.0.23
 To get the password :
 
 ```
-docker logs <id>
+docker logs <container id>
 ```
 
 Start and set a specific password for Tomcat admin user :
