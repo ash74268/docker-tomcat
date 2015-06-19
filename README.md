@@ -5,14 +5,6 @@
 (https://circleci.com/gh/pascalgrimaud/docker-tomcat)
 
 
-# Help
-
-To display usage :
-
-```
-docker run pascalgrimaud/tomcat:8.0.23 /help
-```
-
 
 # Information
 
@@ -40,6 +32,17 @@ You can build directly from the [GitHub project](https://github.com/pascalgrimau
 ```
 docker build -t pascalgrimaud/tomcat:8.0.23 github.com/pascalgrimaud/docker-tomcat.git
 ```
+
+
+
+# Help
+
+To display usage :
+
+```
+docker run pascalgrimaud/tomcat:8.0.23 /help
+```
+
 
 
 # Usage
