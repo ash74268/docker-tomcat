@@ -11,7 +11,7 @@ RUN apt-get -y install wget
 RUN apt-get install -y openjdk-7-jre
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
-install tomcat
+# install tomcat
 RUN wget -O /tmp/apache-tomcat-8.0.26.tar.gz \
    http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.26/bin/apache-tomcat-8.0.26.tar.gz
 RUN echo "a22b16337dbe8dc268ba5cc05c0af089 /tmp/apache-tomcat-8.0.26.tar.gz" | md5sum -c
