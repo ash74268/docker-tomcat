@@ -11,22 +11,23 @@ RUN apt-get -y install wget
 RUN apt-get install -y openjdk-7-jre
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
-# install tomcat
-RUN wget -O /tmp/apache-tomcat-8.0.23.tar.gz \
-    http://apache.mirrors.ovh.net/ftp.apache.org/dist/tomcat/tomcat-8/v8.0.23/bin/apache-tomcat-8.0.23.tar.gz
-RUN echo "f4381824abf458650f72ec12d8e81fde /tmp/apache-tomcat-8.0.23.tar.gz" | md5sum -c
-RUN tar zxvf /tmp/apache-tomcat-8.0.23.tar.gz -C /opt/
-ENV CATALINA_HOME /opt/apache-tomcat-8.0.23
+install tomcat
+RUN wget -O /tmp/apache-tomcat-8.0.26.tar.gz \
+   http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.26/bin/apache-tomcat-8.0.26.tar.gz
+RUN echo "a22b16337dbe8dc268ba5cc05c0af089 /tmp/apache-tomcat-8.0.26.tar.gz" | md5sum -c
+RUN tar zxvf /tmp/apache-tomcat-8.0.26.tar.gz -C /opt/
+ENV CATALINA_HOME /opt/apache-tomcat-8.0.26
 
 # clean
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # expose ports
-EXPOSE 8080
+EXPOSE 8080 1898 62911
 
 # add help
-ADD help help.txt /
-RUN chmod 755 /help
+ADD help /usr/local/bin/
+ADD help.txt /
+RUN chmod 755 /usr/local/bin/help
 
 # script to start the container
 ADD tomcat_run.sh /tomcat_run.sh
